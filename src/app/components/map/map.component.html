@@ -1,0 +1,7 @@
+@if(showMap){
+<google-map mapId="test" height="400px" width="400px" [options]="mapOptions">
+  @for (position of advancedMarkerPositions; track position) {
+  <map-advanced-marker [position]="position" [options]="advancedMarkerOptions" />
+  }
+</google-map>
+}

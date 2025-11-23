@@ -1,0 +1,36 @@
+<h1>Ottawa Road Cameras</h1>
+<form [formGroup]="formGroup">
+  <mat-form-field style="width: 25rem">
+    <mat-label>Search</mat-label>
+    <input
+      id="input-search"
+      type="text"
+      matInput
+      formControlName="search"
+      [matAutocomplete]="auto"
+    />
+    <button mat-icon-button matSuffix (click)="onClearSearch($event)" style="padding:10px">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="onOptionSelected($event)"
+      [displayWith]="getCameraName.bind(this)"
+    >
+      @for (camera of filteredOptions | async; track camera) {
+      <mat-option [value]="camera">
+        {{ camera.name }}
+      </mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <div>
+    <div style="display: flex">
+      <canvas #canvas width="700" height="400"></canvas>
+      @if(!!selectedCamera) {
+      <app-map></app-map>
+      }
+    </div>
+  </div>
+</form>
