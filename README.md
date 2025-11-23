@@ -1,6 +1,7 @@
 # SharpApp
+<img width="1116" height="540" alt="image" src="https://github.com/user-attachments/assets/b68ea727-8c34-46f9-9da6-625216469254" />
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0
 
 ## Development server
 
