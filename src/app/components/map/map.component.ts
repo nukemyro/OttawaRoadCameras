@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { GoogleMap, MapAdvancedMarker } from '@angular/google-maps';
 import { CameraService } from '../../services/camera/camera.service';
 import { Camera } from '../../model/camera';
-import { BehaviorSubject, takeUntil } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-map',
@@ -10,7 +10,7 @@ import { BehaviorSubject, takeUntil } from 'rxjs';
   templateUrl: './map.component.html',
   styleUrl: './map.component.scss',
 })
-export class MapComponent implements OnInit, OnDestroy {
+export class MapComponent implements OnInit {
   center: google.maps.LatLngLiteral = {
     lat: 0,
     lng: 0,
@@ -28,15 +28,8 @@ export class MapComponent implements OnInit, OnDestroy {
     private cameraService: CameraService,
     private cd: ChangeDetectorRef
   ) { }
-
-  ngOnDestroy(): void {
-    this.isDestroyed.next(true);
-  }
-
   ngOnInit(): void {
-    this.cameraService.SelectedCamera$.pipe(
-      takeUntil(this.isDestroyed)
-    ).subscribe((camera: Camera) => {
+    this.cameraService.SelectedCamera$.pipe().subscribe((camera: Camera) => {
       if (camera) {
         this.center.lat = camera.latitude;
         this.center.lng = camera.longitude;
