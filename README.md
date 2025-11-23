@@ -1,6 +1,15 @@
 # SharpApp
+<img width="1116" height="540" alt="image" src="https://github.com/user-attachments/assets/b68ea727-8c34-46f9-9da6-625216469254" />
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0
+
+## Use
+Start typing a road name in the Search input box and it will typeahead reduce the list of available cameras at intersections.
+Click an entry to view the camera and see its place on the google map.
+Stay frosty.
+
+## Google Maps API Key
+Update the API key in index.html to allow Google Maps to work and show where the camera is physically located
 
 ## Development server
 
