@@ -8,6 +8,9 @@ Start typing a road name in the Search input box and it will typeahead reduce th
 Click an entry to view the camera and see its place on the google map.
 Stay frosty.
 
+## Google Maps API Key
+Update the API key in index.html to allow Google Maps to work and show where the camera is physically located
+
 ## Development server
 
 To start a local development server, run:
